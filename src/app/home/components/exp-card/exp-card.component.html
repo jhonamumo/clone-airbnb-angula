@@ -1,7 +1,7 @@
 <div>
-    imagen
+    <img [src]="experience.image" width="200">
     <h3> {{ experience.description }} </h3>
     <h4> {{ experience.place }} </h4>
-    <h4> {{ experience.score }} </h4>
-    <h4> {{ experience.price }} </h4>
+    <app-score [score]="experience.score"></app-score>
+    <p> {{ experience.score }} </p>
 </div>
