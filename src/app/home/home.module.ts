@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ExpListComponent } from './components/exp-list/exp-list.component';
 import { ExpCardComponent } from './components/exp-card/exp-card.component';
 import { HomeComponent } from './home.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,6 +15,7 @@ import { HomeComponent } from './home.component';
   imports: [
     CommonModule,
     SharedModule,
+    RouterModule
   ]
 })
 export class HomeModule { }

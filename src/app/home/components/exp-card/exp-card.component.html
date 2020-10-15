@@ -1,7 +1,11 @@
-<div>
+<div [ngClass]="'exp-card'">
     <img [src]="experience.image" width="200">
-    <h3> {{ experience.description }} </h3>
-    <h4> {{ experience.place }} </h4>
-    <app-score [score]="experience.score"></app-score>
-    <p> {{ experience.score }} </p>
+    <div [ngClass]="'info'">
+        <h3> {{ experience.description }} </h3>
+        <h4> {{ experience.place }} </h4>
+        <div [ngClass]="'score'">
+            <app-score [score]="experience.score"></app-score>
+            <p> {{ experience.score }} </p>
+        </div>
+    </div>
 </div>

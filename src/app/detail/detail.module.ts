@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DetailComponent } from './components/detail/detail.component';
-
+import { DetailComponent } from './detail.component';
+import { SharedModule } from '../shared/shared.module';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
-  declarations: [DetailComponent],
+  declarations: [DetailComponent, CardComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
   ]
 })
 export class DetailModule { }

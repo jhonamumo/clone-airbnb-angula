@@ -1,0 +1,14 @@
+<h3>Login</h3>
+<section>
+    <form class="form" [formGroup]="formGroup">
+        <div class="control-form">
+            <label>Correo Electrónico</label>
+            <input formControlName="email" type="email" name="emailtext" />
+        </div>
+        <div class="control-form">
+            <label>Contraseña</label>
+            <input formControlName="password" type="password" name="passwordText" />
+        </div>
+        <button (click)="login()" [disabled]="formGroup.invalid">Iniciar Sesión</button>
+    </form>
+</section>

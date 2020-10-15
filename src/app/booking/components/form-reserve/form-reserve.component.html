@@ -1,0 +1,14 @@
+<h3>Reservación</h3>
+<section>
+    <form class="form" [formGroup]="formGroup">
+        <div class="control-form">
+            <label>Fecha Reserva</label>
+            <input formControlName="reserveDate" type="date" name="textReserveDate" />
+        </div>
+        <div class="control-form">
+            <label>Descripción</label>
+            <textarea formControlName="description" name="textDescription"></textarea>
+        </div>
+        <button (click)="reserve()" [disabled]="formGroup.invalid" >Reservar</button>
+    </form>
+</section>

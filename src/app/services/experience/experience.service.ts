@@ -54,4 +54,8 @@ export class ExperienceService {
   public getExperiences(): Array<IExperience> {
     return this.experiences;
   }
+
+  public getExperienceById (id: number): IExperience {
+    return this.experiences.find(item => item.id === id);
+  }
 }
