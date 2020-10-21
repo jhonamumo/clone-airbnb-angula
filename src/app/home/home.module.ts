@@ -7,6 +7,7 @@ import { ExpListComponent } from './components/exp-list/exp-list.component';
 import { ExpCardComponent } from './components/exp-card/exp-card.component';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
+import { HomeRoutingModule } from './home-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    HomeRoutingModule
   ]
 })
 export class HomeModule { }

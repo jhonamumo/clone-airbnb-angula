@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { BookingComponent } from './booking/booking.component';
 import { DetailComponent } from './detail/detail.component';
 import { Page404Component } from './error-page/components/page404/page404.component';
-import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 
@@ -14,27 +13,27 @@ export const routes: Routes = [
     },
     {
         path: 'home',
-        component: HomeComponent,
+        loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule)
     },
     {
         path: 'detail/:id',
-        component: DetailComponent,
+        loadChildren: () => import('./detail/detail.module').then(mod => mod.DetailModule)
     },
     {
         path: 'booking',
-        component: BookingComponent,
+        loadChildren: () => import('./booking/booking.module').then(mod => mod.BookingModule)
     },
     {
         path: 'signin',
-        component: SigninComponent,
+        loadChildren: () => import('./signin/signin.module').then(mod => mod.SigninModule)
     },
     {
         path: 'signup',
-        component: SignupComponent,
+        loadChildren: () => import('./signup/signup.module').then(mod => mod.SignupModule)
     },
     {
         path: '404',
-        component: Page404Component,
+        loadChildren: () => import('./error-page/error-page.module').then(mod => mod.ErrorPageModule)
     },
     {
         path: '**',

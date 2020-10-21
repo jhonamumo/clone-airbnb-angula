@@ -5,6 +5,7 @@
             <label>Fecha Reserva</label>
             <input formControlName="reserveDate" type="date" name="textReserveDate" />
         </div>
+        <span class="error">{{ getError('reserveDate') }}</span>
         <div class="control-form">
             <label>Descripción</label>
             <textarea formControlName="description" name="textDescription"></textarea>

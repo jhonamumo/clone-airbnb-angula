@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BookingComponent } from './booking.component';
 import { FormReserveComponent } from './components/form-reserve/form-reserve.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BookingRoutingModule } from './booking-routing.module';
 
 
 
@@ -11,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    BookingRoutingModule,
   ]
 })
 export class BookingModule { }
