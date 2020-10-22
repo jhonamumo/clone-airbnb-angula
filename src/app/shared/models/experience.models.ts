@@ -1,8 +1,9 @@
 export interface IExperience {
-    id: number;
+    _id: number;
     image: string;
     description: string;
     place: string;
+    title: string;
     price?: string;
     score?: number;
 }

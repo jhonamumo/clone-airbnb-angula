@@ -8,6 +8,7 @@ import { DetailModule } from './detail/detail.module';
 import { SignupModule } from './signup/signup.module';
 import { SigninModule } from './signin/signin.module';
 import { BookingModule } from './booking/booking.module';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BookingModule } from './booking/booking.module';
     SignupModule,
     SigninModule,
     BookingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
