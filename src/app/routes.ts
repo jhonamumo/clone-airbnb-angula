@@ -1,9 +1,5 @@
 import { Routes } from '@angular/router';
-import { BookingComponent } from './booking/booking.component';
-import { DetailComponent } from './detail/detail.component';
-import { Page404Component } from './error-page/components/page404/page404.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
+import { OnlyLoggedInUsersGuardGuard } from './shared/guards/only-logged-in-users-guard.guard';
 
 export const routes: Routes = [
     {
@@ -20,8 +16,9 @@ export const routes: Routes = [
         loadChildren: () => import('./detail/detail.module').then(mod => mod.DetailModule)
     },
     {
-        path: 'booking',
-        loadChildren: () => import('./booking/booking.module').then(mod => mod.BookingModule)
+        path: 'booking/:_id',
+        loadChildren: () => import('./booking/booking.module').then(mod => mod.BookingModule),
+        canActivate: [OnlyLoggedInUsersGuardGuard],
     },
     {
         path: 'signin',

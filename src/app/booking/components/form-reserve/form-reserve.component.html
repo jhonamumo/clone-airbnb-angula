@@ -3,9 +3,14 @@
     <form class="form" [formGroup]="formGroup">
         <div class="control-form">
             <label>Fecha Reserva</label>
-            <input formControlName="reserveDate" type="date" name="textReserveDate" />
+            <input formControlName="booking_date_start" type="date" name="booking_date_start" />
         </div>
-        <span class="error">{{ getError('reserveDate') }}</span>
+        <span class="error">{{ getError('booking_date_start') }}</span>
+        <div class="control-form">
+            <label>Fecha Fin:</label>
+            <input formControlName="booking_date_end" type="date" name="booking_date_end">
+        </div>
+        <span class="error"> {{ getError('booking_date_end') }} </span>
         <div class="control-form">
             <label>Descripción</label>
             <textarea formControlName="description" name="textDescription"></textarea>

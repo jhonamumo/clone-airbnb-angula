@@ -1,17 +1,18 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { from, Observable, throwError }  from 'rxjs';
+import { Observable, throwError }  from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { IExperience } from 'src/app/shared/models/experience.models';
 import { IExperiencesResponse } from 'src/app/shared/models/experiencesResponse.model';
 import { IExperienceTop5Response } from 'src/app/shared/models/experienceTop5Response.model';
+import { environment } from './../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExperienceService {
 
-  private urlAPI: string = 'https://bankairbnbapp.herokuapp.com';
+  //private urlAPI: string = 'https://bankairbnbapp.herokuapp.com';
+  private urlAPI: string = environment.urlBase;
 
   constructor(private httpClient: HttpClient) { }
 

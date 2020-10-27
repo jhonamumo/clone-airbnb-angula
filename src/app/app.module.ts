@@ -8,7 +8,8 @@ import { DetailModule } from './detail/detail.module';
 import { SignupModule } from './signup/signup.module';
 import { SigninModule } from './signin/signin.module';
 import { BookingModule } from './booking/booking.module';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { AuthInterceptorService } from './services/interceptor/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,13 @@ import { HttpClientModule } from '@angular/common/http'
     BookingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ExperienceService } from '../services/experience/experience.service';
 import { IExperience } from '../shared/models/experience.models';
 
@@ -14,7 +14,8 @@ export class DetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute, 
-    private experienceService: ExperienceService
+    private experienceService: ExperienceService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -28,6 +29,10 @@ export class DetailComponent implements OnInit {
         this.experience = response.experience;
       });
     });
+  }
+
+  public irReserva(id: string): void{
+    this.router.navigate(['/booking', id ]);
   }
 
 }

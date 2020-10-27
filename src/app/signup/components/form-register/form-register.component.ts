@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ISignup } from 'src/app/shared/models/signup.models';
+import { UsersService } from '../../../services/users/users.service'
 
 @Component({
   selector: 'app-form-register',
@@ -10,7 +13,7 @@ export class FormRegisterComponent implements OnInit {
 
   public formGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private usersService: UsersService, private router: Router) { }
 
   ngOnInit(): void {
     this.formInit();
@@ -68,8 +71,14 @@ export class FormRegisterComponent implements OnInit {
   }
 
   public register(): void{
-    const data = this.formGroup.value;
-    console.log('data resgister', data)
+    const data: ISignup = this.formGroup.value;
+    this.usersService.postSignup(data).subscribe(response => {
+      // console.log('Response', response);
+      if(response.status === 1){
+        this.router.navigate(['signin']);
+      }
+    });
+    // console.log('data resgister', data)
   }
 
 }
