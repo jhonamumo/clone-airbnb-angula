@@ -5,6 +5,15 @@ body {
 }
 
 .button-form {
+    border: 1px solid $babu-color;
+    background-color: $babu-color;
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+.button-detail{
     margin: 10px 20px;
 }
 
