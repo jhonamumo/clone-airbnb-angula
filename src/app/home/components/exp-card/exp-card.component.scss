@@ -1,4 +1,8 @@
 .exp-card {
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
     display: flex;
     border: 1px solid #F2F2F2;
     margin: 10px 6px;

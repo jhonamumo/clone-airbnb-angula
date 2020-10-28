@@ -1,4 +1,4 @@
-<div [ngClass]="'exp-card'">
+<div [ngClass]="'exp-card'" [routerLink]="['/detail/' + experience._id ]">
     <img [src]="experience.image" width="200">
     <div [ngClass]="'info'">
         <h3> {{ experience.description }} </h3>
